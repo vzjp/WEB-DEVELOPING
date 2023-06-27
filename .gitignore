@@ -1,0 +1,7 @@
+*.png
+*.jpeg
+*.jpg
+*.HEIC
+solution*
+.DS_Store
+ignore*/
