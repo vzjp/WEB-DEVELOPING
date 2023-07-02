@@ -4,9 +4,6 @@
   animation: gradient-animation 18s ease infinite;
 }
 
-#title > div{
-  padding-bottom : 0px!important;
-}
 
 @keyframes gradient-animation {
   0% {
@@ -29,4 +26,32 @@
 .profile-img {
   height: 100px;
   border-radius: 50%;
+}
+
+#title > div{
+  padding-bottom : 0px!important;
+}
+
+#testimonial{
+  background-color: rgb(241, 241, 241);
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+#testimonial > div{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+#testimonial h2{
+  text-align: center;
+}
+.companies img{
+  height: 30px;
+  width: auto;
+}
+.company-item{
+display: inline-flex;
+justify-content: center;
 }
