@@ -1,0 +1,31 @@
+html{
+    background-color:rgb(14, 2, 29)
+}
+body{
+    color: aquamarine;
+}
+.container{
+    text-align: center;
+    grid-template-columns: 50% 50%;
+}
+h1{
+    justify-content: center;
+    font-family: "Lobster";
+    font-size: 5rem;
+    grid-column: span 2;
+}
+
+.dice{
+    display: inline-block;
+    margin:15px;
+}
+
+p{
+    font-family: "Indie Flower";
+    font-size: 1.5rem;
+}
+
+footer{
+    color: whitesmoke;
+    text-align: center;
+}
