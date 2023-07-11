@@ -5,12 +5,14 @@ for(var i = 0; i < buttons.length; i++){
     buttons[i].addEventListener("click", function(){
         var buttonInnerHTML = this.innerHTML;
         playSound(key);
+        buttonAnimation(buttonInnerHTML);
     });
 }
 
 //Detecting keyboard pressed.
 document.addEventListener("keydown", function(ev){
     playSound(ev.key);
+    buttonAnimation(ev.key);
 })
 
 function playSound(key) {
@@ -55,4 +57,12 @@ function playSound(key) {
             console.log(key);
             break;
     }
+}
+
+function buttonAnimation(currentKey){
+    var activeButton = document.querySelector("." + currentKey);
+    activeButton.classList.add("pressed");
+    setTimeout(function(){
+        activeButton.classList.remove("pressed");
+    }, 100);
 }
