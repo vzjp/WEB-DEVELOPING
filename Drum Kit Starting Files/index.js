@@ -4,7 +4,7 @@ var buttons = document.querySelectorAll("button.drum");
 for(var i = 0; i < buttons.length; i++){
     buttons[i].addEventListener("click", function(){
         var buttonInnerHTML = this.innerHTML;
-        playSound(key);
+        playSound(buttonInnerHTML);
         buttonAnimation(buttonInnerHTML);
     });
 }
