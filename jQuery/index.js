@@ -1,3 +1,3 @@
 $("h1").addClass("red");
 
-$("button").text("Dont forget me");
+$("button").html("<em>Hey</em>");
