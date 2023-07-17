@@ -1,3 +1,3 @@
-$("h1").addClass("red");
-
-$("button").html("<em>Hey</em>");
+$(document).keypress(function(event){
+    $("h1").text(event.key);
+});
