@@ -1,9 +1,16 @@
+import bodyParser from "body-parser";
 import express from "express";
 
 const app = express();
 const port = 3000;
 
+var logger = function(req, res, next){
+  console.log(req.method + req.url);
+  next();
+}
+
 app.use(logger);
+
 
 app.get("/", (req, res) => {
   res.send("Hello");
