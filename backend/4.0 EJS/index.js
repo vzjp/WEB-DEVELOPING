@@ -8,27 +8,24 @@ function finddaytype(){
     const today = new Date();
     const day = today.getDay();
     if(0 < day && day < 6){
-        return "Weekday";
+        return {
+            daytype:"Weekday",
+            advice:"It's time to work hard!"
+        }
     }else{
-        return "Weekend";
-    }
-}
-
-function findadvice(){
-    const today = new Date();
-    const day = today.getDay();
-    if(0 < day && day < 6){
-        return "It's time to work hard!";
-    }else{
-        return "It's time to have fun!";
+        return {
+            daytype:"Weekend",
+            advice:"It's time to have fun!"
+        }
     }
 }
 
 app.get("/", (req, res) => {
+    const daytypeandadvice = finddaytype();
     res.render("index.ejs", 
     {
-        dayType : finddaytype(),
-        advice : findadvice(),
+        dayType : daytypeandadvice.daytype,
+        advice : daytypeandadvice.advice,
     });
 });
 
