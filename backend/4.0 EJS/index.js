@@ -4,20 +4,28 @@ import ejs from "ejs";
 const app = express();
 const port = 3000;
 
-function isweekend(){
-    const thisday = new Date();
-    const day = thisday.getDay();
+function finddaytype(){
+    const today = new Date();
+    const day = today.getDay();
     if(0 < day && day < 6){
-        return "Weekday. It's time to work hard!";
+        return {
+            daytype:"Weekday",
+            advice:"It's time to work hard!"
+        }
     }else{
-        return "Weekend. It's time to have fun!";
+        return {
+            daytype:"Weekend",
+            advice:"It's time to have fun!"
+        }
     }
 }
 
 app.get("/", (req, res) => {
+    const daytypeandadvice = finddaytype();
     res.render("index.ejs", 
     {
-        weekdayorweekend : isweekend(),
+        dayType : daytypeandadvice.daytype,
+        advice : daytypeandadvice.advice,
     });
 });
 
