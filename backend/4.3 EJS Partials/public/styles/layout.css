@@ -167,14 +167,20 @@ i {
 footer {
   position: relative;
   width: 100%;
-  background: #3586ff;
+  /* background: #3586ff; */
   min-height: 100px;
-  padding: 20px 50px;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
+}
+
+footer>*{
+  background : #3586ff;
+  width: 100%;
+  margin: 0;
 }
 
 footer .social_icon,
@@ -183,7 +189,7 @@ footer .menu {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0;
+  margin: 0;
 }
 
 footer .social_icon li,
@@ -218,8 +224,8 @@ footer .menu li a:hover {
 p {
   color: whtie;
   text-align: center;
-  margin-top: 15px;
-  margin-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
   font-size: 1.1em;
 }
 
@@ -228,9 +234,14 @@ p {
 }
 
 /*wave and animation*/
+footer .waves{
+  height: 100px;
+  background: white;
+}
+
 footer .wave {
   position: absolute;
-  top: -100px;
+  top: 0px;
   left: 0;
   width: 100%;
   height: 100px;
