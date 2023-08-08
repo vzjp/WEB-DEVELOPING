@@ -21,6 +21,12 @@ app.get("/", (req, res) => {
 });
 
 app.post("/submit", (req, res) => {
+  const adj_random = adj[Math.floor(Math.random() * adj.length)];
+  const noun_random = noun[Math.floor(Math.random() * noun.length)];
+  const band_name = adj_random + " " + noun_random;
+  res.render("index.ejs", {
+    band_name : band_name,
+  })
   //Step 2 - Make the generate name functionality work
   //Hint: When the "Generate Name" button in index.ejs is clicked, it should hit up this route.
   //Then:
