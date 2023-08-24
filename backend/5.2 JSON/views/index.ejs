@@ -19,17 +19,19 @@
     <!-- If no recipe yet, show: -->
     <% if(locals.name){ %>
     <h2> <%= name %> </h2>
+    <h3>Ingredients:</h3>
+    <ul id="ingredientsList">
+      <li><%= protein %></li>
+      <li><%= salsa %></li>
+      <% for(let i=0; i < locals.toppings.length; i++){ %>
+        <li><%= locals.toppings[i].quantity + " of " + locals.toppings[i].name %></li>
+      <% } %>
+    </ul>
     <% }else{ %>
     <h2>Pick your favourite taco ingredient 👆</h2>
     <% } %>
     <!-- Else, show the recipe name e.g. <h2>Recipe name</h2>-->
 
-    <h3>Ingredients:</h3>
-    <ul id="ingredientsList">
-      <li>Protein name, protein preparation</li>
-      <li>Salsa name</li>
-      <li>Every other topping</li>
-    </ul>
 
 
 
