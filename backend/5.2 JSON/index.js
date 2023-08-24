@@ -19,15 +19,20 @@ app.get("/", (req, res) => {
 app.post("/recipe", (req, res) => {
   const choosenProtein = req.body.choice;
   const recipe = JSON.parse(recipeJSON);
+  let recipe_choosen = null;
   if(choosenProtein === "chicken"){
-    res.render("index.ejs", {
-      name : recipe[0].name,
-    });
+    recipe_choosen = recipe[0]
   }else if(choosenProtein === "beef"){
-
+    recipe_choosen = recipe[1]
   }else if(choosenProtein === "fish"){
-
+    recipe_choosen = recipe[2]
   }
+  res.render("index.ejs", {
+    name : recipe_choosen.name,
+    protein : recipe_choosen.ingredients.protein.name + ", " + recipe_choosen.ingredients.protein.preparation,
+    salsa : recipe_choosen.ingredients.salsa.name + ", " + recipe_choosen.ingredients.salsa.spiciness,
+    toppings : recipe_choosen.ingredients.toppings,
+  });
   //Step 3: Write your code here to make this behave like the solution website.
   //Step 4: Add code to views/index.ejs to use the recieved recipe object.
 });
